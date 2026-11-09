@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Busta cifrata (tutti i messaggi dopo l'handshake)",
+  "type": "object",
+  "required": ["session_id", "ciphertext", "tag"],
+  "properties": {
+    "session_id": { "type": "string", "pattern": "^[0-9a-f]{8}$", "description": "unico dato in chiaro" },
+    "ciphertext": { "type": "string", "pattern": "^[A-Za-z0-9+/]+={0,2}$", "description": "nonce + testo cifrato, in Base64" },
+    "tag": { "type": "string", "pattern": "^[A-Za-z0-9+/]+={0,2}$", "description": "tag di controllo AES-GCM, in Base64" }
+  },
+  "additionalProperties": false
+}
