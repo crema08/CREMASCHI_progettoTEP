@@ -2,7 +2,15 @@
 
 Sistema client-server HTTP in C#. I sensori di temperatura mandano le misure in JSON, cifrate con una chiave concordata tramite **Diffie-Hellman** e controllate con **JSON Schema**.
 
-## Struttura
+## Struttura del repository
+
+| Percorso | Contenuto |
+|---|---|
+| `FrigoTrack/` | **tutto il programma**: è la cartella da scaricare e aprire con Visual Studio (`FrigoTrack/FrigoTrack.sln`) |
+| `README.md`, `RELAZIONE.md` | documentazione e relazione |
+| `5IB_Progetto_TEP.pdf` | testo della consegna |
+
+Dentro `FrigoTrack/`:
 
 | Cartella | Contenuto |
 |---|---|
@@ -20,13 +28,14 @@ Sistema client-server HTTP in C#. I sensori di temperatura mandano le misure in 
 ## Avvio
 
 **Da Visual Studio**
-1. Aprire `FrigoTrack.sln`.
+1. Aprire `FrigoTrack/FrigoTrack.sln`.
 2. Tasto destro sulla soluzione → *Configura progetti di avvio* → *Progetti di avvio multipli*.
 3. Mettere `Server` e `Client` su *Avvio* (oppure `Server` e `Test` per i test).
 4. Premere *Avvia* e, nella finestra del client, premere INVIO quando il server è partito.
 
-**Da terminale** (due finestre, nella cartella della soluzione)
+**Da terminale** (due finestre, nella cartella `FrigoTrack/`)
 ```
+cd FrigoTrack
 dotnet run --project Server
 dotnet run --project Client
 dotnet run --project Test
@@ -90,7 +99,7 @@ Le misure ricevute vengono salvate in `dati/` accanto all'eseguibile del server 
 
 ## Messaggi
 
-Ogni messaggio ha il suo schema in `schemas/`.
+Ogni messaggio ha il suo schema in `FrigoTrack/schemas/`.
 
 | Schema | Messaggio | Campi |
 |---|---|---|
