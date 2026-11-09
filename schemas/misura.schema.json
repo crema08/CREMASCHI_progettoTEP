@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Misura sensore (dentro la busta di /api/telemetry)",
+  "type": "object",
+  "required": ["sensor_id", "timestamp", "cargo_type", "temperature_c"],
+  "properties": {
+    "sensor_id": { "type": "string", "pattern": "^[A-Z]+-[A-Z]{2}-[0-9]{3}$", "description": "es. CELLA-BG-007" },
+    "timestamp": { "type": "string", "format": "date-time", "description": "data e ora UTC della misura" },
+    "cargo_type": { "enum": ["food", "pharma", "frozen"], "description": "tipo di merce" },
+    "temperature_c": { "type": "number", "minimum": -40, "maximum": 40, "description": "temperatura in gradi" },
+    "humidity": { "type": "number", "minimum": 0, "maximum": 100, "description": "umidita' in percentuale" },
+    "battery": { "type": "integer", "minimum": 0, "maximum": 100, "description": "batteria in percentuale" }
+  },
+  "additionalProperties": false
+}
