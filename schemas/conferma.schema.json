@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Conferma (ack) di una misura (risposta di /api/telemetry)",
+  "type": "object",
+  "required": ["status", "sensor_id", "alarm", "message"],
+  "properties": {
+    "status": { "enum": ["ok"] },
+    "sensor_id": { "type": "string", "pattern": "^[A-Z]+-[A-Z]{2}-[0-9]{3}$" },
+    "alarm": { "type": "boolean", "description": "true se la temperatura e' fuori dall'intervallo di sicurezza" },
+    "message": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Conferma di chiusura sessione (risposta di /api/close)",
+  "type": "object",
+  "required": ["status", "session_id"],
+  "properties": {
+    "status": { "enum": ["closed"] },
+    "session_id": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+  },
+  "additionalProperties": false
+}

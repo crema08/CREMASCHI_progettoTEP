@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Messaggio di errore",
+  "type": "object",
+  "required": ["error"],
+  "properties": {
+    "error": { "type": "string", "minLength": 1, "description": "descrizione dell'errore" },
+    "field": { "type": "string", "description": "campo sbagliato, se si sa quale" }
+  },
+  "additionalProperties": false
+}

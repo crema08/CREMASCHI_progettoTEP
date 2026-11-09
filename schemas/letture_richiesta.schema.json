@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Richiesta delle misure salvate (dentro la busta di /api/readings)",
+  "type": "object",
+  "required": ["sensor_id", "from", "to"],
+  "properties": {
+    "sensor_id": { "type": "string", "pattern": "^[A-Z]+-[A-Z]{2}-[0-9]{3}$" },
+    "from": { "type": "string", "format": "date-time", "description": "inizio dell'intervallo" },
+    "to": { "type": "string", "format": "date-time", "description": "fine dell'intervallo" }
+  },
+  "additionalProperties": false
+}

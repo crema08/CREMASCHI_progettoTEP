@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Richiesta di handshake (client -> server, in chiaro)",
+  "type": "object",
+  "required": ["p", "g", "A"],
+  "properties": {
+    "p": { "type": "string", "pattern": "^[0-9]+$", "description": "numero primo p, in cifre decimali" },
+    "g": { "type": "string", "pattern": "^[0-9]+$", "description": "generatore g, in cifre decimali" },
+    "A": { "type": "string", "pattern": "^[0-9]+$", "description": "chiave pubblica del client A = g^a mod p" }
+  },
+  "additionalProperties": false
+}
